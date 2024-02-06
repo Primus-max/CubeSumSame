@@ -42,7 +42,7 @@ string ConsoleResultInfo(int userInput)
     int cubSum = CalcCubSum(userInput);
     int square = userInput * userInput;
 
-    return "Куб суммы цифр этого числа " + (cubSum == square ? positive : negative) + " " +  to_string(userInput * userInput);
+    return "Куб суммы цифр этого числа " + (cubSum == square ? positive : negative) + " " +  to_string(square);
     
 }
 
