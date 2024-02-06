@@ -5,9 +5,14 @@
 #include <iostream>
 #include <windows.h>
 #include <cmath>
+#include <string>
 using namespace std;
 
-
+/// <summary>
+/// Метод расчёта куба суммы цифр
+/// </summary>
+/// <param name="userInput"></param>
+/// <returns></returns>
 int CalcCubSum(int userInput) 
 {
     int result = 0;
@@ -24,6 +29,22 @@ int CalcCubSum(int userInput)
     return pow(result, 3); // Или конечно без библиотеки это будет result * result * result
 }
 
+/// <summary>
+/// Метод вывода итоговой информации
+/// </summary>
+/// <param name="userInput"></param>
+/// <returns></returns>
+string ConsoleResultInfo(int userInput)
+{
+    string negative = "неравен";
+    string positive = "равен";
+
+    int cubSum = CalcCubSum(userInput);
+    int square = userInput * userInput;
+
+    return "Куб суммы цифр этого числа " + (cubSum == square ? positive : negative) + " " +  to_string(userInput * userInput);
+    
+}
 
 int main()
 {
@@ -33,7 +54,6 @@ int main()
     int userInput = 0;
     cout << "Программа поможет определить что куб суммы цифр этого числа равен А * А, введите число А: ";
     cin >> userInput;
-
     
-
+    cout << ConsoleResultInfo(userInput);
 }
